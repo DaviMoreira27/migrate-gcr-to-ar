@@ -52,7 +52,7 @@ func transferFromGcrToArtifactRegistry(image string, tag string) {
 	imagePlusTag := fmt.Sprintf("%s:%s", image, tag)
 	currentDate := time.Now().Unix()
 
-	targetImage := fmt.Sprintf("us-docker.pkg.dev/keyword-finder-platform/gcr.io/%s:%d", getImageName(image), currentDate)
+	targetImage := fmt.Sprintf("us-docker.pkg.dev/PROJECT/gcr.io/%s:%d", getImageName(image), currentDate)
 
 	fmt.Println(fmt.Sprintln("gcloud", "container", "images", "add-tag", imagePlusTag, targetImage))
 
